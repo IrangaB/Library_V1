@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IssueBooksDataSet" targetNamespace="http://tempuri.org/IssueBooksDataSet.xsd" xmlns:mstns="http://tempuri.org/IssueBooksDataSet.xsd" xmlns="http://tempuri.org/IssueBooksDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Mtx_LibraryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Mtx_LibraryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Library_V1.Properties.Settings.GlobalReference.Default.Mtx_LibraryConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Mtx_LibraryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        IssueBooks.Epf, IssueBooks.Isbn, IssueBooks.ExpectReturn, IssueBooks.IssueDate, IssueBooks.IssueFlag, Employee.FirstName, Employee.LastName, Employee.Departments, BookRegister.BookName
+FROM            IssueBooks INNER JOIN
+                         Employee ON IssueBooks.Epf = Employee.EPF INNER JOIN
+                         BookRegister ON IssueBooks.Isbn = BookRegister.Isbn
+WHERE        (IssueBooks.IssueFlag = '0')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Epf" DataSetColumn="Epf" />
+              <Mapping SourceColumn="Isbn" DataSetColumn="Isbn" />
+              <Mapping SourceColumn="ExpectReturn" DataSetColumn="ExpectReturn" />
+              <Mapping SourceColumn="IssueDate" DataSetColumn="IssueDate" />
+              <Mapping SourceColumn="IssueFlag" DataSetColumn="IssueFlag" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="Departments" DataSetColumn="Departments" />
+              <Mapping SourceColumn="BookName" DataSetColumn="BookName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="IssueBooksDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="IssueBooksDataSet" msprop:Generator_DataSetName="IssueBooksDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Epf" msprop:Generator_ColumnPropNameInRow="Epf" msprop:Generator_ColumnPropNameInTable="EpfColumn" msprop:Generator_ColumnVarNameInTable="columnEpf" msprop:Generator_UserColumnName="Epf" type="xs:int" />
+              <xs:element name="Isbn" msprop:Generator_ColumnPropNameInRow="Isbn" msprop:Generator_ColumnPropNameInTable="IsbnColumn" msprop:Generator_ColumnVarNameInTable="columnIsbn" msprop:Generator_UserColumnName="Isbn" type="xs:int" />
+              <xs:element name="ExpectReturn" msprop:Generator_ColumnPropNameInRow="ExpectReturn" msprop:Generator_ColumnPropNameInTable="ExpectReturnColumn" msprop:Generator_ColumnVarNameInTable="columnExpectReturn" msprop:Generator_UserColumnName="ExpectReturn" type="xs:dateTime" />
+              <xs:element name="IssueDate" msprop:Generator_ColumnPropNameInRow="IssueDate" msprop:Generator_ColumnPropNameInTable="IssueDateColumn" msprop:Generator_ColumnVarNameInTable="columnIssueDate" msprop:Generator_UserColumnName="IssueDate" type="xs:dateTime" />
+              <xs:element name="IssueFlag" msprop:Generator_ColumnPropNameInRow="IssueFlag" msprop:Generator_ColumnPropNameInTable="IssueFlagColumn" msprop:Generator_ColumnVarNameInTable="columnIssueFlag" msprop:Generator_UserColumnName="IssueFlag" type="xs:int" />
+              <xs:element name="FirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_UserColumnName="FirstName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_UserColumnName="LastName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Departments" msprop:Generator_ColumnPropNameInRow="Departments" msprop:Generator_ColumnPropNameInTable="DepartmentsColumn" msprop:Generator_ColumnVarNameInTable="columnDepartments" msprop:Generator_UserColumnName="Departments">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookName" msprop:Generator_ColumnPropNameInRow="BookName" msprop:Generator_ColumnPropNameInTable="BookNameColumn" msprop:Generator_ColumnVarNameInTable="columnBookName" msprop:Generator_UserColumnName="BookName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
